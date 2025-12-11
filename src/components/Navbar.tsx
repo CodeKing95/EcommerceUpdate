@@ -1,6 +1,5 @@
 import React from "react";
 import { IoMdSearch } from "react-icons/io";
-import { FaOpencart } from "react-icons/fa6";
 import CartButton from "./CartButton";
 
 const MenuLinks = [
@@ -74,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({ searchTerm, setSearchTerm }) => {
             <div className="relative group hidden sm:block">
   <input
     type="text"
-    placeholder="Search"
+    placeholder="Search..."
     className="search-bar"
     value={searchTerm}
     onChange={(e) => setSearchTerm(e.target.value)}

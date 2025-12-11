@@ -1,4 +1,3 @@
-import React from 'react';
 import Img1 from '../assets/Top/iphone.png';
 import Img2 from '../assets/Top/G2.jpg';
 import Img3 from '../assets/Top/MOTOR.jpg';
@@ -6,7 +5,6 @@ import { FaStar } from 'react-icons/fa';
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
 
 const ProductsData = [

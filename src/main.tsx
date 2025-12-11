@@ -10,8 +10,8 @@ import "aos/dist/aos.css";
 
 AOS.init({
   duration: 800, // animation duration
-  easing: "ease-in-out", 
-  once: true, 
+  easing: "ease-in-out",
+  once: true,
 });
 
 import "slick-carousel/slick/slick.css";
@@ -23,7 +23,7 @@ createRoot(rootElement).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-      <App />
+        <App />
       </BrowserRouter>
     </Provider>
   </StrictMode>

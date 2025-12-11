@@ -5,8 +5,6 @@ import type { Product } from "./ProductCard";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import toast from "react-hot-toast";
-import { IoMdSearch } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 
 
 
@@ -34,21 +32,21 @@ const ProductsData: Product[] = [
     title: "Playstation 5",
     price: 299,
     aosDelay: "300",
-    rating: 4.8,
+    rating: 9.9,
     reviewCount: 210,
     sold: 100,
     description: "Nice Product ",
     longDescription: "Amazing",
-    
+
   },
-   {
+  {
     id: 2,
     img: Img2,
     title: "Xbox Series X",
     price: 450,
     aosDelay: "0",
     rating: 4.5,
-    reviewCount: 210,
+    reviewCount: 120,
     sold: 50,
   },
   {
@@ -58,7 +56,7 @@ const ProductsData: Product[] = [
     price: 220,
     aosDelay: "0",
     rating: 4.0,
-    reviewCount: 210,
+    reviewCount: 150,
     sold: 150,
   },
   {
@@ -68,7 +66,7 @@ const ProductsData: Product[] = [
     price: 799,
     aosDelay: "0",
     rating: 5.5,
-    reviewCount: 210,
+    reviewCount: 170,
     sold: 200,
   },
   {
@@ -78,7 +76,7 @@ const ProductsData: Product[] = [
     price: 1200,
     aosDelay: "0",
     rating: 5.0,
-    reviewCount: 210,
+    reviewCount: 160,
     sold: 250,
   },
   {
@@ -88,7 +86,7 @@ const ProductsData: Product[] = [
     price: 1500,
     aosDelay: "0",
     rating: 3.8,
-    reviewCount: 210,
+    reviewCount: 140,
     sold: 100,
   },
   {
@@ -98,7 +96,7 @@ const ProductsData: Product[] = [
     price: 1999,
     aosDelay: "0",
     rating: 6.0,
-    reviewCount: 210,
+    reviewCount: 110,
     sold: 300,
   },
   {
@@ -108,7 +106,7 @@ const ProductsData: Product[] = [
     price: 150,
     aosDelay: "0",
     rating: 5.5,
-    reviewCount: 210,
+    reviewCount: 50,
     sold: 350,
   },
   {
@@ -118,7 +116,7 @@ const ProductsData: Product[] = [
     price: 300,
     aosDelay: "0",
     rating: 4.8,
-    reviewCount: 210,
+    reviewCount: 60,
     sold: 50,
   },
   {
@@ -128,7 +126,7 @@ const ProductsData: Product[] = [
     price: 450,
     aosDelay: "0",
     rating: 4.9,
-    reviewCount: 210,
+    reviewCount: 10,
     sold: 100,
   },
   {
@@ -138,7 +136,7 @@ const ProductsData: Product[] = [
     price: 500,
     aosDelay: "0",
     rating: 5.1,
-    reviewCount: 210,
+    reviewCount: 90,
     sold: 75,
   },
   {
@@ -148,7 +146,7 @@ const ProductsData: Product[] = [
     price: 99,
     aosDelay: "0",
     rating: 9.9,
-    reviewCount: 210,
+    reviewCount: 100,
     sold: 1000,
   },
   {
@@ -158,7 +156,7 @@ const ProductsData: Product[] = [
     price: 20,
     aosDelay: "0",
     rating: 7.0,
-    reviewCount: 210,
+    reviewCount: 75,
     sold: 400,
   },
   {
@@ -168,7 +166,7 @@ const ProductsData: Product[] = [
     price: 250,
     aosDelay: "0",
     rating: 4.9,
-    reviewCount: 210,
+    reviewCount: 60,
     sold: 1000,
   },
   {
@@ -178,7 +176,7 @@ const ProductsData: Product[] = [
     price: 2000,
     aosDelay: "0",
     rating: 7.5,
-    reviewCount: 210,
+    reviewCount: 135,
     sold: 150,
   },
   {
@@ -188,7 +186,7 @@ const ProductsData: Product[] = [
     price: 299,
     aosDelay: "0",
     rating: 6.8,
-    reviewCount: 210,
+    reviewCount: 125,
     sold: 100,
   },
 
@@ -209,6 +207,7 @@ const Products: React.FC<ProductsProps> = ({ searchTerm }) => {
   const filteredProducts = ProductsData.filter((product) =>
     (product.title || "").toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
 
   return (
     <div className="container">

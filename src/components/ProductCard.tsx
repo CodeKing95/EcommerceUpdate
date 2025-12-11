@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Button from "./Button";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 export interface Product {
   id: number;
@@ -49,11 +46,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ data, onAddToCart }) => {
             <p className="text--700">${product.price}</p>
 
             <div className="flex items-center gap-2 text-sm text-yellow-500 mt-1">
-  ⭐ {product.rating} 
-  <span className="text-gray-500">({product.reviewCount})</span>
-</div>
+              ⭐ {product.rating}
+              <span className="text-gray-500">({product.reviewCount})</span>
+            </div>
 
-<p className="text-sm text-gray-500">Sold: {product.sold}</p>
+            <p className="text-sm text-gray-500">Sold: {product.sold}</p>
 
 
             <button

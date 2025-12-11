@@ -1,11 +1,10 @@
-import React from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt } from 'react-icons/fa';
 
 const FooterLinks = [
-    { title: "Home", link: "/#" },
-    { title: "About", link: "/#" },
-    { title: "Contact", link: "/#" },
-    { title: "Blog", link: "/#" },
+  { title: "Home", link: "/#" },
+  { title: "About", link: "/#" },
+  { title: "Contact", link: "/#" },
+  { title: "Blog", link: "/#" },
 ];
 
 const Footer = () => {
