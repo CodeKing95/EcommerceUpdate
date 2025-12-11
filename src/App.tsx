@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -19,6 +19,7 @@ import OrderSummary from "./pages/OrderSummary";
 
 
 
+
 const BannerData = {
   discount: "30% OFF",
   title: "Fine Smile",
@@ -32,29 +33,31 @@ const BannerData = {
 
 
 const App = () => {
+  const[searchTerm, setSearchTerm] = useState("");
   return (
     <>
-      <Navbar />
+      <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <Toaster position="top-center" reverseOrder={false} />
 
       <Routes>
         <Route path="/" element={
-          <>
+          <div className="pt-20">
             <Hero />
             <Category />
             <Category2 />
             <Services />
             <Banner data={BannerData} />
-            <Products  />
+            <Products searchTerm={searchTerm} />
             <TopProducts />
             <Blogs/>
             <Partnership />
             <Footer />
-          </>
+            </div>
         } />
         <Route path="/cart" element={<CartPage />}/>
         <Route path="/checkout" element={<CheckoutPage />}/>
         <Route path="/order-summary" element={<OrderSummary />}/>
+
       
       </Routes>
     </>

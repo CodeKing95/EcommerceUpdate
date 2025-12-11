@@ -51,6 +51,7 @@ const handlePayNow = (e: FormEvent) => {
   });
 };
   return (
+    <div className="pt-20 container">
     <div className="checkout-container">
       <h2 className="checkout-title">Checkout</h2>
 
@@ -191,7 +192,7 @@ const handlePayNow = (e: FormEvent) => {
             <p className="grand-total">Total: ${totalPrice}</p>
           </div>
         </div>
-
+</div>
       </div>
     </div>
   );

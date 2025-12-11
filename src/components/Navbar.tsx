@@ -3,7 +3,6 @@ import { IoMdSearch } from "react-icons/io";
 import { FaOpencart } from "react-icons/fa6";
 import CartButton from "./CartButton";
 
-
 const MenuLinks = [
     {
         id: 1,
@@ -26,14 +25,16 @@ const MenuLinks = [
         link: "/#blog",
     },
 ];
+interface NavbarProps {
+  searchTerm: string;
+  setSearchTerm: (value: string) => void;
+}
 
-const Navbar = () => {
-    function setSearchTerm(value: string): void {
-        throw new Error("Function not implemented.");
-    }
+const Navbar: React.FC<NavbarProps> = ({ searchTerm, setSearchTerm }) => {
+
 
     return(
-        <div className="bg-white dark:bg-gray-900 dark:text-white">
+        <div className="bg-white dark:bg-gray-900 dark:text-white fixed top-0 left-0 w-full z-50 shadow-md">
             <div className="py-4">
                 <div className="container flex justify-between items-center">
                     {/* Logo and Links Section */}
@@ -70,13 +71,17 @@ const Navbar = () => {
                     {/* Navbar Right Section */}
                     <div className="flex justify-between items-center gap-4">
                     {/* Search Bar section */}
-                     <div className="relative group hidden sm:block">
-                    <input type="text" placeholder="Search" className="
-                    search-bar
-                    "/>
-                    <IoMdSearch className="text-xl text-gray-600
-                     group-hover:text-primary dark:text-gray-400 absolute top-1/-translate-y-1/2 right-3 duration-200"/>
-                </div>
+            <div className="relative group hidden sm:block">
+  <input
+    type="text"
+    placeholder="Search"
+    className="search-bar"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+  <IoMdSearch className="text-xl text-gray-600 group-hover:text-primary dark:text-gray-400 absolute top-1/2 -translate-y-1/2 right-3 duration-200" />
+</div>
+
 
                 {/* Order-button section */ }
                    <div className="flex justify-between items-center gap-4">

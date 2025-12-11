@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
 import toast from "react-hot-toast";
 import { IoMdSearch } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
 
 
 import Img1 from '../assets/product/P5.png';
@@ -25,7 +27,7 @@ import Img16 from '../assets/product/ear.jpg';
 import Img17 from '../assets/product/ipad.jpg';
 import Img18 from '../assets/product/vr.jpg';
 
-export const ProductsData: Product[] = [
+const ProductsData: Product[] = [
   {
     id: 1,
     img: Img1,
@@ -190,23 +192,28 @@ export const ProductsData: Product[] = [
     sold: 100,
   },
 
-  
 ];
 
-const Products: React.FC = () => {
+interface ProductsProps {
+  searchTerm: string;
+}
+
+const Products: React.FC<ProductsProps> = ({ searchTerm }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (product: Product) => {
-    dispatch(addToCart(product)); // 👈 now updates Redux!
-     toast.success(`${product.title} has been added to your cart!`);
+    dispatch(addToCart(product));
+    toast.success(`${product.title} has been added to your cart!`);
   };
 
-  
+  const filteredProducts = ProductsData.filter((product) =>
+    (product.title || "").toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="container">
       <Heading title="Our Products" subtitle="Explore Our Products" />
-      <ProductCard data={ProductsData} onAddToCart={handleAddToCart} />
+      <ProductCard data={filteredProducts} onAddToCart={handleAddToCart} />
     </div>
   );
 };

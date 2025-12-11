@@ -74,3 +74,4 @@ export default defineConfig([
 # ReactTypeScript2
 # ReactTypeScript3
 # ReactTypeScript4
+# ReactTypeScript5

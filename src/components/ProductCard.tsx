@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export interface Product {
   id: number;

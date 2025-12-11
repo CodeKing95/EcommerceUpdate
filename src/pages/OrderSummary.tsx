@@ -19,6 +19,7 @@ const OrderSummary = () => {
   }
 
   return (
+      <div className="pt-20 container">
     <div className="order-summary-container">
       <h2 className="success-title">🎉 Your Order Has Now Been Confirmed!</h2>
       <p className="subtitle">Thank you for shopping with Tech Stars 💙</p>
@@ -55,6 +56,7 @@ const OrderSummary = () => {
       <button className="back-btn" onClick={() => navigate("/")}>
         Back to Home 🏡
       </button>
+      </div>
     </div>
   );
 };
