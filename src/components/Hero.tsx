@@ -3,7 +3,7 @@ import Image1 from "../assets/website/razer1.png";
 import Image2 from "../assets/website/gaming.png";
 import Image3 from "../assets/website/phones.jpg";
 
-
+ 
 
 const HeroData = [
     {
